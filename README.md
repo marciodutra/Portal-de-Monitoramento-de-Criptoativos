@@ -4,6 +4,12 @@ Um painel de monitoramento de criptomoedas desenvolvido em **React + TypeScript*
 
 O projeto foi desenvolvido como parte de um desafio técnico para uma vaga de **Desenvolvedor Front-end**, tendo como foco boas práticas de desenvolvimento, componentização, consumo de APIs REST e organização de código.
 
+## 🌐 Aplicação Online
+
+**Acesse o projeto:**
+
+https://SEU-PROJETO.vercel.app
+
 ---
 
 # 📸 Screenshots
