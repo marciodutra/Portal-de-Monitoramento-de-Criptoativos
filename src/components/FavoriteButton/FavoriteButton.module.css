@@ -1,0 +1,43 @@
+.button {
+  width: 45px;
+
+  height: 45px;
+
+  border-radius: 50%;
+
+  border: none;
+
+  background: #f3f4f6;
+
+  font-size: 26px;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  transition: all .25s ease;
+
+  box-shadow: 0 3px 10px rgba(0,0,0,.08);
+}
+
+
+.button:hover {
+
+  transform: scale(1.15);
+
+  background: #fef3c7;
+}
+
+
+
+.active {
+
+  background: #fef3c7;
+
+  box-shadow:
+    0 0 15px rgba(245,158,11,.35);
+}

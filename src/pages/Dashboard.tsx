@@ -40,57 +40,60 @@ const Dashboard = () => {
   }
 
   return (
-  <div
-    style={{
-      maxWidth: "1100px",
-      margin: "40px auto",
-      padding: "20px",
-    }}
-  >
-    {selectedCrypto && (
-      <CryptoModal
-        crypto={selectedCrypto}
-        onClose={() => setSelectedCrypto(null)}
-      />
-    )}
-
-    <Header
-      search={search}
-      setSearch={setSearch}
-      onRefresh={fetchCryptos}
-      loading={loading}
-    />
-
-    <h2
+    <div
       style={{
-        marginBottom: "20px",
-        color: "#374151",
+        maxWidth: "1100px",
+        margin: "40px auto",
+        padding: "20px",
       }}
     >
-      Top 10 Criptomoedas
-    </h2>
+      {selectedCrypto && (
+        <CryptoModal
+          crypto={selectedCrypto}
+          onClose={() => setSelectedCrypto(null)}
+        />
+      )}
 
-    {filteredCryptos.map((crypto) => (
-      <CryptoCard
-        key={crypto.id}
-        crypto={crypto}
-        favorite={isFavorite(crypto.id)}
-        onToggleFavorite={() =>
-          isFavorite(crypto.id)
-            ? removeFavorite(crypto.id)
-            : addFavorite(crypto.id)
-        }
-        onClick={() =>
-          setSelectedCrypto(
-            selectedCrypto?.id === crypto.id
-              ? null
-              : crypto
-          )
-        }
+      <Header
+        search={search}
+        setSearch={setSearch}
+        onRefresh={fetchCryptos}
+        loading={loading}
       />
-    ))}
-  </div>
-);
+
+      <h2
+        style={{
+          marginBottom: "20px",
+          color: "#374151",
+        }}
+      >
+        Top 10 Criptomoedas
+      </h2>
+      <div className="crypto-grid">
+
+        {filteredCryptos.map((crypto) => (
+          <CryptoCard
+            key={crypto.id}
+            crypto={crypto}
+            favorite={isFavorite(crypto.id)}
+            onToggleFavorite={() =>
+              isFavorite(crypto.id)
+                ? removeFavorite(crypto.id)
+                : addFavorite(crypto.id)
+            }
+            onClick={() =>
+              setSelectedCrypto(
+                selectedCrypto?.id === crypto.id
+                  ? null
+                  : crypto
+              )
+            }
+          />
+        ))}
+
+      </div>
+    </div>
+  );
 };
 
 export default Dashboard;

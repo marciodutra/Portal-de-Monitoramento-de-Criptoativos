@@ -16,40 +16,67 @@ const CryptoCard = ({
   onToggleFavorite,
   onClick,
 }: CryptoCardProps) => {
+  const isPositive =
+    crypto.price_change_percentage_24h >= 0;
 
   return (
     <div
       className={styles.card}
       onClick={onClick}
     >
-      <FavoriteButton
-        favorite={favorite}
-        onToggle={onToggleFavorite}
-      />
 
-      <h2 className={styles.name}>
-        {crypto.name}
-      </h2>
+      <div className={styles.header}>
+        <div>
+          <h2 className={styles.name}>
+            {crypto.name}
+          </h2>
 
-      <p className={styles.info}>
-        Símbolo: {crypto.symbol.toUpperCase()}
-      </p>
+          <span className={styles.symbol}>
+            {crypto.symbol.toUpperCase()}
+          </span>
+        </div>
 
-      <p className={styles.info}>
-        Preço: {formatCurrency(crypto.current_price)}
-      </p>
+        <FavoriteButton
+          favorite={favorite}
+          onToggle={onToggleFavorite}
+        />
+      </div>
 
-      <p
+
+      <div className={styles.priceSection}>
+        <span className={styles.label}>
+          Preço atual
+        </span>
+
+        <strong className={styles.price}>
+          {formatCurrency(crypto.current_price)}
+        </strong>
+      </div>
+
+
+      <div
         className={
-          crypto.price_change_percentage_24h >= 0
+          isPositive
             ? styles.positive
             : styles.negative
         }
       >
-        Variação 24h:
+        {isPositive ? "▲" : "▼"}
+
         {" "}
+
         {crypto.price_change_percentage_24h.toFixed(2)}%
-      </p>
+
+        <span className={styles.changeLabel}>
+          {" "}últimas 24h
+        </span>
+      </div>
+
+
+      <div className={styles.footer}>
+        Clique para ver detalhes →
+      </div>
+
     </div>
   );
 };
