@@ -1,5 +1,6 @@
 import SearchBar from "../SearchBar/SearchBar";
 import Button from "../Button/Button";
+import { RefreshCw, Star } from "lucide-react";
 import styles from "./Header.module.css";
 
 interface HeaderProps {
@@ -7,6 +8,8 @@ interface HeaderProps {
   setSearch: React.Dispatch<React.SetStateAction<string>>;
   onRefresh: () => void;
   loading: boolean;
+  favoritesCount: number;
+  lastUpdated: Date | null;
 }
 
 const Header = ({
@@ -14,30 +17,72 @@ const Header = ({
   setSearch,
   onRefresh,
   loading,
+  favoritesCount,
+  lastUpdated,
 }: HeaderProps) => {
   return (
     <header className={styles.container}>
-      <div className={styles.hero}>
-        <h1 className={styles.title}>🚀 Crypto Monitor</h1>
 
-        <p className={styles.subtitle}>
-          Acompanhe em tempo real as principais criptomoedas do mercado.
-        </p>
+      <h1 className={styles.title}>
+        Crypto Monitor
+      </h1>
+
+
+      <p className={styles.subtitle}>
+        Acompanhe em tempo real as principais criptomoedas do mercado.
+      </p>
+
+
+      <div className={styles.infoContainer}>
+
+        {lastUpdated && (
+          <div className={styles.updateBadge}>
+            ⏱ Última atualização:{" "}
+            {lastUpdated.toLocaleTimeString("pt-BR")}
+          </div>
+        )}
+
+        <div className={styles.favoriteBadge}>
+
+          <Star
+            size={18}
+            fill="currentColor"
+          />
+
+          {favoritesCount} favoritos
+
+        </div>
+
       </div>
 
+
       <div className={styles.actions}>
+
         <SearchBar
           search={search}
           setSearch={setSearch}
         />
 
+
         <Button
           onClick={onRefresh}
           disabled={loading}
         >
-          {loading ? "Atualizando..." : "🔄 Atualizar"}
+
+          <RefreshCw
+            size={18}
+            className={loading ? styles.spin : ""}
+          />
+
+          {loading
+            ? "Atualizando..."
+            : "Atualizar"
+          }
+
         </Button>
+
       </div>
+
     </header>
   );
 };

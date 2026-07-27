@@ -1,3 +1,4 @@
+import { Star } from "lucide-react";
 import styles from "./FavoriteButton.module.css";
 
 interface FavoriteButtonProps {
@@ -21,7 +22,10 @@ const FavoriteButton = ({
       aria-label="Favoritar criptomoeda"
       type="button"
     >
-      {favorite ? "⭐" : "☆"}
+      <Star
+        size={26}
+        fill={favorite ? "currentColor" : "none"}
+      />
     </button>
   );
 };

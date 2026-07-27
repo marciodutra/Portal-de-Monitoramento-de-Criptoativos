@@ -1,0 +1,113 @@
+.card {
+
+  background: white;
+
+  border-radius: 20px;
+
+  padding: 24px;
+
+  height: 260px;
+
+  border: 1px solid #e5e7eb;
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,.08);
+
+}
+
+
+.header {
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+}
+
+
+.lineLarge {
+
+  width:120px;
+
+  height:24px;
+
+  border-radius:8px;
+
+  background:#e5e7eb;
+
+}
+
+
+.circle {
+
+  width:45px;
+
+  height:45px;
+
+  border-radius:50%;
+
+  background:#e5e7eb;
+
+}
+
+
+.lineSmall {
+
+  margin-top:15px;
+
+  width:60px;
+
+  height:18px;
+
+  border-radius:8px;
+
+  background:#e5e7eb;
+
+}
+
+
+.price {
+
+  margin-top:35px;
+
+  width:180px;
+
+  height:35px;
+
+  border-radius:8px;
+
+  background:#e5e7eb;
+
+}
+
+
+.lineMedium {
+
+  margin-top:25px;
+
+  width:120px;
+
+  height:22px;
+
+  border-radius:8px;
+
+  background:#e5e7eb;
+
+}
+
+
+.footer {
+
+  margin-top:35px;
+
+  width:150px;
+
+  height:16px;
+
+  border-radius:8px;
+
+  background:#e5e7eb;
+
+}

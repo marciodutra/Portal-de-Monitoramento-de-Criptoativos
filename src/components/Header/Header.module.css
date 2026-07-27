@@ -31,3 +31,128 @@
   gap: 18px;
   flex-wrap: wrap;
 }
+
+.favoriteBadge {
+
+  display:flex;
+
+  align-items:center;
+
+  gap:8px;
+
+  width:max-content;
+
+  margin-bottom:20px;
+
+  padding:8px 14px;
+
+  border-radius:20px;
+
+  background:#fef3c7;
+
+  color:#92400e;
+
+  font-size:14px;
+
+  font-weight:600;
+
+}
+
+
+.spin {
+
+  animation:spin 1s linear infinite;
+
+}
+
+
+@keyframes spin {
+
+  from {
+    transform:rotate(0deg);
+  }
+
+  to {
+    transform:rotate(360deg);
+  }
+
+}
+
+.updateInfo {
+
+  margin-bottom:20px;
+
+  color:#6b7280;
+
+  font-size:14px;
+
+}
+
+.infoContainer {
+
+  display: flex;
+
+  gap: 12px;
+
+  align-items: center;
+
+  margin: 20px 0;
+
+}
+
+
+.updateBadge {
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 10px 16px;
+
+  border-radius: 14px;
+
+  background: rgba(255,255,255,0.15);
+
+  color: white;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+}
+
+
+.favoriteBadge {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 10px 16px;
+
+  border-radius: 14px;
+
+  background: #fef3c7;
+
+  color: #92400e;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+}
+
+
+@media (max-width:768px) {
+
+  .infoContainer {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+  }
+
+}

@@ -1,3 +1,4 @@
+import { Search } from "lucide-react";
 import styles from "./SearchBar.module.css";
 
 interface SearchBarProps {
@@ -11,15 +12,22 @@ const SearchBar = ({
 }: SearchBarProps) => {
   return (
     <div className={styles.container}>
+
+      <Search
+        className={styles.icon}
+        size={20}
+      />
+
       <input
         className={styles.input}
         type="text"
-        placeholder="🔍 Pesquise por nome ou símbolo..."
+        placeholder="Pesquise por nome ou símbolo..."
         value={search}
         onChange={(event) =>
           setSearch(event.target.value)
         }
       />
+
     </div>
   );
 };
